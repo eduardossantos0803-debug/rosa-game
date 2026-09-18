@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Escola Rosa Bonfiglioli",
+      "hasCanvas": true,
+      "bodyTextLen": 360,
+      "bodyTextHash": "7461bc5fc39c89deef6884237bf791b2d9eb8981ad836af52ce4a0689fe7b220",
+      "bodyTextPrefix": "ESCOLA ESTADUAL · NOTURNO Rosa Bonfiglioli A cidade anunciou seu",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Escola Rosa Bonfiglioli",
+      "hasCanvas": true,
+      "bodyTextLen": 360,
+      "bodyTextHash": "7461bc5fc39c89deef6884237bf791b2d9eb8981ad836af52ce4a0689fe7b220",
+      "bodyTextPrefix": "ESCOLA ESTADUAL · NOTURNO Rosa Bonfiglioli A cidade anunciou seu",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

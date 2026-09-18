@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070506;
+  --color-surface: #141012;
+  --color-elevated: #1c1618;
+  --color-fg: #e4d6c5;
+  --color-muted: #8a7a72;
+  --color-faint: #5c504c;
+  --color-accent: #c45c5c;
+  --color-accent-dim: #8a3a3a;
+  --color-paper: #dccbb4;
+  --color-ink: #1a1210;
+  --color-warn: #c4a35a;
+  --color-border: rgb(228 214 197 / 0.14);
+  --color-border-strong: rgb(228 214 197 / 0.28);
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  html,
+  body {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.18) 0px,
+    rgb(0 0 0 / 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
+.vignette {
+  background: radial-gradient(ellipse at center, transparent 42%, rgb(0 0 0 / 0.72) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scanlines {
+    display: none;
+  }
+}
