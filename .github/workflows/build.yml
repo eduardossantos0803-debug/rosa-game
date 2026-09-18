@@ -30,10 +30,30 @@ jobs:
       - name: Gerar Build do Projeto
         run: npx vite build
 
-      - name: Criar index.html estático
+      - name: Criar index.html com os Scripts do App
         run: |
           mkdir -p .vercel/output/static
-          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>App</title></head><body><div id="root"></div></body></html>' > .vercel/output/static/index.html
+          
+          # Pega os nomes dos arquivos JS e CSS gerados no build
+          JS_FILE=$(basename $(ls .vercel/output/static/assets/index-*.js | head -n 1))
+          CSS_FILE=$(basename $(ls .vercel/output/static/assets/styles-*.css 2>/dev/null | head -n 1 || echo ""))
+          
+          # Cria o HTML vinculando o JS e o CSS
+          cat <<EOF > .vercel/output/static/index.html
+          <!DOCTYPE html>
+          <html lang="pt-BR">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Rosa Game</title>
+            <link rel="stylesheet" href="./assets/$CSS_FILE">
+          </head>
+          <body>
+            <div id="root"></div>
+            <script type="module" src="./assets/$JS_FILE"></script>
+          </body>
+          </html>
+          EOF
 
       - name: Sincronizar Capacitor
         run: npx cap sync
